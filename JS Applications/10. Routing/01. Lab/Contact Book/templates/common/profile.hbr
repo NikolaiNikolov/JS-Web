@@ -1,0 +1,28 @@
+<div class="container">
+    {{> header}}
+    <div class="box-large">
+        <h1>My Profile</h1>
+        <div class="content">
+            <div class="info">
+                <div class="col centered">
+                    <span class="avatar">&#9787;</span>
+                    <button>Change</button>
+                </div>
+                <div class="col">
+                    <form class="profile-editor">
+                        <label for="firstName">First name:</label>
+                        <input id="firstName" type="text" value="{{firstName}}"><br>
+                        <label for="lastName">Last name:</label>
+                        <input id="lastName" type="text" value="{{lastName}}"><br>
+                        <label for="phone">Phone:</label>
+                        <input id="phone" type="text" value="{{phone}}"><br>
+                        <label for="email">E-mail:</label>
+                        <input id="email" type="text" value="{{email}}"><br>
+                        <input type="submit" value="Save changes">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{> footer}}
+</div>

@@ -1,0 +1,58 @@
+{{#if currentUser.isAdmin}}
+    <h1>Welcome to Doner Place!</h1>
+    <p>We offer a wide variety of tasty doner kebab, cutosmized to your liking. Choose from different sizes of chicken,
+        beef and lamb and any topping you want. Place your order now!</p>
+    <div class="products">
+        <h2>Admin</h2>
+        <div class="product-card">
+            <img src="/img/new.png">
+            <a href="/create/product" class="button product-title">Create Product</a>
+        </div>
+        <h2>Chicken Doner</h2>
+        {{#each chicken}}
+            <div class="product-card">
+                <img src="{{imageUrl}}">
+                <a href="#" class="control"><img class="control-img" src="/img/edit.png"></a>
+                <a href="#" class="control"><img class="control-img" src="/img/delete.png"></a>
+            </div>
+        {{/each}}
+        <h2>Beef Doner</h2>
+        {{#each beef}}
+            <div class="product-card">
+                <img src="{{imageUrl}}">
+                <a href="#" class="control"><img class="control-img" src="/img/edit.png"></a>
+                <a href="#" class="control"><img class="control-img" src="/img/delete.png"></a>
+            </div>
+        {{/each}}
+        <h2>Lamb Doner</h2>
+        {{#each lamb}}
+            <div class="product-card">
+                <img src="{{imageUrl}}">
+                <a href="#" class="control"><img class="control-img" src="/img/edit.png"></a>
+                <a href="#" class="control"><img class="control-img" src="/img/delete.png"></a>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+    <h1>Welcome to Doner Place!</h1>
+    <p>We offer a wide variety of tasty doner kebab, cutosmized to your liking. Choose from different sizes of chicken,
+        beef and lamb and any topping you want. Place your order now!</p>
+    <div class="products">
+        <h2>Chicken Doner</h2>
+        {{#each chicken}}
+            <div class="product-card"><img src="{{imageUrl}}">
+                <a href="/product/order/{{_id}}" class="button product-title">Order</a></div>
+        {{/each}}
+        <h2>Beef Doner</h2>
+        {{#each beef}}
+            <div class="product-card"><img src="{{imageUrl}}">
+                <a href="/product/order/{{_id}}" class="button product-title">Order</a></div>
+        {{/each}}
+        <h2>Lamb Doner</h2>
+        {{#each lamb}}
+            <div class="product-card"><img src="{{imageUrl}}">
+                <a href="/product/order/{{_id}}" class="button product-title">Order</a></div>
+        {{/each}}
+    </div>
+{{/if}}
+

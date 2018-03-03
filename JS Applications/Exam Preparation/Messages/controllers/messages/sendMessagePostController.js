@@ -1,0 +1,3 @@
+handlers.sendMessagePostController = function () {
+
+};

@@ -1,0 +1,11 @@
+<tr>
+    <td>{{product.name}}</td>
+    <td>{{product.description}}</td>
+    <td>{{quantity}}</td>
+    <td>{{product.price}}</td>
+    <td>
+        <form action="#/cart/discard/:{{id}}" method="POST">
+            <input type="submit" value="Discard">
+        </form>
+    </td>
+</tr>

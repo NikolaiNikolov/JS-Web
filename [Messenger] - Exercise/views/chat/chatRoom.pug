@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    .container.chat-wrapper
+        .wrapper.chat
+            if messages
+                each message in messages
+                    - positionClass= message.user._id.equals(user._id)? 'right' : 'left'
+                    .thread-message(class=positionClass)
+                        span= message.content
+                    .clear
+        .wrapper
+            form(method='post')
+                .form-group
+                    textarea#chat-form.input-field(name='content')= newMessage
+                    input.btn.btn-primary(type='submit' value='Send')

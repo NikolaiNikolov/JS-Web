@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+    if user
+      form(method='get' action='/user/find')
+          input(type='text' name='username', placeholder='Search usernames...')
+          input(type='submit' value='Search')
+      if users
+          .container
+          each otherUser in users
+              .wrapper.row
+                  h3
+                      a(href='/thread/' + otherUser.username)= otherUser.username
+    else
+        h1.head-title Welcome to Messenger!

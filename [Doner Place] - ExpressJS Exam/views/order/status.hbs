@@ -1,0 +1,35 @@
+{{#if currentUser.isAdmin}}
+    <h1>Manage orders</h1>
+    <div class="orders">
+        <form method="post" action="/manage/orders">
+            {{#each orders}}
+                <div class="order">
+                    <span class="order-time">{{date}}</span>
+                    <span class="order-name">{{product.category}} doner, {{product.size}} cm</span>
+                    <span class="order-status">
+							<select name="{{_id}}">
+								<option value="pending" {{#if this.isPening}}selected{{/if}}>Pending</option>
+								<option value="inProgress" {{#if this.isInProgress}}selected{{/if}}>In Progress</option>
+								<option value="inTransit" {{#if this.isInTransit}}selected{{/if}}>In Transit</option>
+								<option value="delivered" {{#if this.isDelivered}}selected{{/if}}>Delivered</option>
+							</select>
+						</span>
+                    <a href="/order/details/{{_id}}" class="button order-button">Details</a>
+                </div>
+            {{/each}}
+            <input type="submit" value="Save Changes" class="button" style="border:0">
+        </form>
+    </div>
+{{else}}
+    <h1>Your orders</h1>
+    <div class="orders">
+        {{#each orders}}
+            <div class="order">
+                <span class="order-time">{{date}}</span>
+                <span class="order-name">{{product.category}} doner, {{product.size}}cm</span>
+                <span class="order-status">{{status}}</span>
+                <a href="/order/details/{{_id}}" class="button order-button">Details</a>
+            </div>
+        {{/each}}
+    </div>
+{{/if}}

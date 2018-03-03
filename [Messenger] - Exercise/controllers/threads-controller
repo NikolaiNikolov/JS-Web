@@ -1,0 +1,39 @@
+const Thread = require('./../models/Thread');
+const User = require('./../models/User');
+const Message = require('./../models/User');
+
+module.exports = {
+    get: async (req, res) => {
+
+        try {
+            let currentUser = req.user;
+            let otherUser = await User.findOne({username: req.params.username});
+
+            Thread.findOne({
+                $all: [currentUser._id, otherUser._id]
+            }).then(currentThread => {
+                if (!currentThread) {
+                    return res.redirect('/?error=Thread no longer exists')
+                }
+
+                let data = { currentThread };
+                Message.find({thread: currentThread._id})
+                    .sort({createdOn: 1})
+                    .populate('user')
+                    .then(messages => {
+                        data.messages = messages;
+                        res.render('chat/chatRoom', data);
+                    })
+            })
+
+        } catch (err) {
+            console.log(err);
+        }
+
+
+        res.render('chat/chatRoom');
+    },
+    post: (req, res) => {
+        console.log(req.body);
+    }
+};

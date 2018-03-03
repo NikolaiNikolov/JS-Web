@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Messages</title>
+    <!--Libraries-->
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="../../node_modules/sammy/lib/min/sammy-0.7.6.min.js"></script>
+    <script src="../../node_modules/sammy/lib/min/plugins/sammy.handlebars-0.7.6.min.js"></script>
+    <!--End of Libraries-->
+    <!--Models-->
+    <script src="scripts/app.js"></script>
+    <!--End of Models-->
+    <script src="models/auth.js"></script>
+    <script src="models/requester.js"></script>
+    <script src="models/util.js"></script>
+    <!--Controllers-->
+    <script src="controllers/homeController.js"></script>
+    <script src="controllers/login/loginController.js"></script>
+    <script src="controllers/login/loginPostController.js"></script>
+    <script src="controllers/register/registerController.js"></script>
+    <script src="controllers/register/registerPostController.js"></script>
+    <script src="controllers/logoutController.js"></script>
+    <script src="controllers/messages/myMessagesController.js"></script>
+    <script src="controllers/messages/sendMessageController.js"></script>
+    <script src="controllers/messages/sendMessagePostController.js"></script>
+    <script src="controllers/archiveController.js"></script>
+    <!--End of Controllers-->
+    <link rel="stylesheet" type="text/css" href="styles/messages.css"/>
+</head>
+
+<body>
+<!--<section id="loadingBox">Loading ...</section>-->
+<section id="infoBox" style="display: none">Info</section>
+<section id="errorBox" style="display: none">Error</section>
+
+<div id="app">
+</div>
+
+</body>
+
+</html>

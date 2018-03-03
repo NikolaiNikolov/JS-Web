@@ -1,0 +1,14 @@
+{
+  "name": "mongodbexercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "WS",
+  "license": "MIT",
+  "dependencies": {
+    "formidable": "^1.1.1"
+  }
+}
